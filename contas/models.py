@@ -1,3 +1,23 @@
 from django.db import models
 
 # Create your models here.
+class ContasPessoais(models.Model):
+    código_contas = models.AutoField(primary_key=True)
+    nome_conta = models.CharField(null=False, blank=False)
+    fornecedor = models.CharField(null=False, blank=False)
+
+    def __str__(self):
+        return self.nome_conta
+ 
+"""
+class Paciente(models.Model):
+    codigo_paciente = models.AutoField(primary_key=True)
+    nome = models.CharField(null=False, blank=False)
+    cpf = models.CharField(max_length=14, unique=True, null=False, blank=False)
+    email = models.EmailField(unique=True, null=False, blank=False)
+    telefone  = models.CharField(max_length=15, null=False, blank=False)
+    data_nascimento = models.DateField(null=False, blank=False)
+
+    def __str__(self):
+        return self.nome
+"""

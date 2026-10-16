@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Miguel de Sousa">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
+
 <body>
-    
+
+    {% include 'includes/header.html' %}
+        <h1>App para controle das contas pessoais.</h1>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+    {% include 'includes/footer.html' %}
 </body>
+
 </html>

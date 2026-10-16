@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas a pagar.</title>
+</head>
+{% block content%}
+<body>
+    <h1>APP contas a pagar!</h1>
+    <h2>Controle suas contas pessoais.</h2>
+    <h3 class="mt-5">Cadastrar novas contas pessoais</h3>
+    <hr>
+    <form action="{% url 'cadastrar_contas' %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div>
+                <label for="nome_conta" class="form-label">Nome da conta:</label>
+                <input type="text" class="form-control" name="nome_conta" required>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <label for="fornecedor" class="form-label">Fornecedor:</label>
+                <input type="text" class="form-control" name="fornecedor" required>
+            </div>
+            <div class="row">
+                <div>
+                    <button type="submit" class="btn btn-primary">Cadastrar nova conta</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
+{% endblock %}
+
