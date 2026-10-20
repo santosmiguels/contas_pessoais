@@ -8,75 +8,17 @@ class ContasPessoaisForm(forms.ModelForm):
           fields = ['nome_conta', 'fornecedor']
           widgets = {
                 'nome_conta': forms.TextInput(
-                    attrs={
-                         
+                    attrs={                         
                          'class':"form_control",
                          'id':"nome_conta",
                          'required':True,
                     },
                ),
                'fornecedor':forms.TextInput(
-                    
+                    attrs={
+                         'class':"forms.-control",
+                         'id':"nome_conta",
+                         'required':True                         
+                    },                    
                ),
           }
-        
-"""
-class PacienteForm(forms.ModelForm):
-    class Meta:
-        model = Paciente
-        fields = ['nome','cpf','email','telefone','data_nascimento','sintomas']
-        widgets = {
-            'nome':forms.TextInput(
-                attrs={
-                    'class':"form-control",
-                    'id':"nome",
-                    'required':True,
-                },
-            ),
-            'cpf':forms.TextInput(
-                attrs={
-                    'class':"form-control",
-                    'id':"cpf",
-                    'required':True,
-                },
-            ),
-            'email':forms.EmailInput(
-                attrs={
-                    'class':"form-control",
-                    'id':"email",
-                    'required':True,
-                },
-            ),
-            'telefone':forms.TelInput(
-                attrs={
-                    'class':"form-control",
-                    'id':"telefone",
-                    'required':True,
-                },
-            ),
-            'data_nascimento':forms.DateInput(
-                format='%Y-%m-%d',
-                attrs={
-                    'type':"date",
-                    'class':"form-control",
-                    'id':"data_nascimento",
-                    'required':True,
-                },
-            ),
-            'sintomas':forms.Textarea(
-                attrs={
-                    'class':"form-control",
-                    'id':"sintomas",
-                    'rows':3,
-                },
-            ),
-        }
-        error_messages = {
-            'email':{
-                'unique': "E-mail já cadastrado.",
-            },
-            'cpf':{
-                'unique': "CPF já cadastrado.",
-            },
-        }
-"""
