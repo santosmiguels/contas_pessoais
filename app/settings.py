@@ -27,8 +27,10 @@ SECRET_KEY = 'django-insecure-f*hwi)$q63((ew1#3s#(k%!h*%xgnac$dlb#4gq5(l8l(fli($
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    #'localhost',
+    #'localhost:8000',
     #'contas_pessoais.onrender.com',
+    'contas-pessoais-j2vo.onrender.com'
+    #'127.0.0.1'
 ]
 
 # Application definition
