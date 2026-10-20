@@ -8,6 +8,15 @@ class ContasPessoais(models.Model):
 
     def __str__(self):
         return self.nome_conta
+
+class PesquisarContas(models.Model):
+    pass
+
+class AtualizarContas(models.Model):
+    pass
+
+class RemoverContas(models.Model):
+    pass
  
 """
 class Paciente(models.Model):

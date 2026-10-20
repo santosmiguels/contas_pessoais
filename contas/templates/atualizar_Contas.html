@@ -1,0 +1,18 @@
+{% extends 'base_contas.html' %}
+{% block title %}Atualizar contas{% endblock %}
+{% block content %}
+<div class="row mt-5">
+    <h2>Atualizar contas:</h2>
+    <ul>
+        {% for contas in contaspessoais %}
+        <li>
+            {{ contas.código_contas }} |
+            {{ contas.nome_conta }} |
+            {{ contas.fornecedor }} |
+            <a href="">Alterar</a> 
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Voltar/home</a>
+</div>
+{% endblock %}

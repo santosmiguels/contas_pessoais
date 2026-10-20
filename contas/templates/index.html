@@ -1,33 +1,46 @@
 {% extends 'base_contas.html' %}
-{% block title %} Sitema de contas pessoais | Página incial {% endblock %}
+{% block title %} Sitema de contas pessoais | Página inicial {% endblock %}
 {% block content %}
-<div class="justify-content-center">
+<div class="row mt-5">
     <h2>Controle suas contas pessoais.</h2>
 </div>
-<div>
-    <a href="{% url 'cadastrar_contas' %}">Cadastrar conta </a>
+<div class="row mt-5">
+    <a href="{% url 'cadastrar_contas' %}">
+        <h3>C - Cadastrar contas novas</h3>
+    </a>
+    <a href="{% url 'pesquisar_contas' %}">
+        <h3>R - Listar todas as contas cadastradas</h3>
+    </a>
+    <a href="{% url 'atualizar_contas' %}">
+        <h3>U - Atualizar uma conta</h3>
+    </a>
+    <a href="{% url 'remover_contas' %}">
+        <h3>D - Remover uma conta</h3>
+    </a>
 </div>
-
-
 {% endblock %}
 
+
+
+
 <!--
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contas a pagar.</title>
-</head>
-<body>
-    <h1>APP contas a pagar!</h1>
-    <h2>Controle suas contas pessoais.</h2>
-    <h3>C - Cadastrar</h3>
-    <h3>R - Ler/Pequisar</h3>
-    <h3>U - Atualizar</h3>
-    <h3>D - Remover</h3>
-</body>
-</html>
-
-<a href="{% url 'cadastrarContas/' %}">Cadastrar conta </a>
-
+            {% for paciente in pacientes %}
+                <li>
+                    {{ paciente.codigo_paciente }} |
+                    {{ paciente.nome }} |
+                    {{ paciente.cpf }} |
+                    {{ paciente.email }} |
+                    {{ paciente.telefone }} |
+                    {{ paciente.data_nascimento|date:"d/m/Y" }} |
+                    <a href="{% url 'alterar_paciente' paciente.codigo_paciente %}">Alterar</a> |
+                    <a href="{% url 'excluir_paciente' paciente.codigo_paciente %}">Excluir</a>
+                    <ul>
+                        <li>
+                            {{ paciente.sintomas }}
+                        </li>
+                    </ul>
+                </li>
+            {% empty %}
+                <li>Nenhum paciente cadastrado.</li>
+            {% endfor %}
+-->

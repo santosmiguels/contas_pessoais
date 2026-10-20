@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import ContasPessoais
 
 # Create your views here.
@@ -17,36 +17,41 @@ def cadastrar_contas(request):
         )
     return render(request, "cadastrar_contas.html")
 
+def atualizar_contas(request):
+    query = request.GET.get('get', '')
+    contaspessoais = ContasPessoais.objects.filter(nome_conta__icontains=query)
+    return render(request, 'atualizar_contas.html', {
+        'contaspessoais': contaspessoais,
+        'query': query,
+    })
+    #return render(request, 'atualizar_contas.html')
 
+
+
+def pesquisar_contas(request):
+    query = request.GET.get('get', '')
+    contaspessoais = ContasPessoais.objects.filter(nome_conta__icontains=query)
+    return render(request, 'pesquisar_contas.html', {
+        'contaspessoais': contaspessoais,
+        'query': query,
+    })
+
+
+def remover_contas(request):
+    query = request.GET.get('get', '')
+    contaspessoais = ContasPessoais.objects.filter(nome_conta__icontains=query)
+    return render(request, 'pesquisar_contas.html', {
+        'contaspessoais': contaspessoais,
+        'query': query,
+    })
+#    contas = ContasPessoais.objects.get(código_contas=código_contas)
+#    contas.delete()
+#    return redirect('index')
 """
-def novo_paciente(request):
-    if request.method == 'POST':
-        nome = request.POST.get('nome')
-        cpf =  request.POST.get('cpf')
-        email = request.POST.get('email')
-        telefone = request.POST.get('telefone')
-        data_nascimento = request.POST.get('data_nascimento')
-
-        Paciente.objects.create(
-            nome = nome,
-            cpf = cpf,
-            email = email,
-            telefone = telefone,
-            data_nascimento = data_nascimento,
-        )
-        return redirect('novo_paciente_sucesso')
-    return render(request, "novo-paciente.html")
-
-
-class ContasPessoais(models.Model):
-    código_contas = models.AutoField(primary_key=True)
-    nome_conta = models.CharField(null=False, blank=False)
-    fornecedor = models.CharField(null=False, blank=False)
-
-    def __str__(self):
-        return self.nome_conta
-
-
-
-    
+    query = request.GET.get('get', '')
+    contaspessoais = ContasPessoais.objects.filter(nome_conta__icontains=query)
+    return render(request, 'remover_contas.html', {
+        'contaspessoais': contaspessoais,
+        'query': query,
+    })
 """

@@ -1,0 +1,16 @@
+{% extends 'base_contas.html' %}
+{% block title %}Pesquisar contas{% endblock %}
+{% block content %}
+<div class="row mt-5">
+    <h2>Lista de contas pessoais:</h2>
+    <ul>
+        {% for contas in contaspessoais %}
+        <li>
+            {{ contas.código_contas }} |
+            {{ contas.nome_conta }} |
+            {{ contas.fornecedor }} |
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Voltar/home</a>
+    {% endblock %}

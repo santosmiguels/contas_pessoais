@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contas a pagar.</title>
-</head>
-{% block content%}
+{% extends 'base_contas.html' %}
+{% block title %}Cadastro de novas contas{% endblock %}
+{% block content %}
 <body>
-    <h1>APP contas a pagar!</h1>
-    <h2>Controle suas contas pessoais.</h2>
     <h3 class="mt-5">Cadastrar novas contas pessoais</h3>
     <hr>
     <form action="{% url 'cadastrar_contas' %}" method="POST">
@@ -32,9 +24,6 @@
             </div>
         </div>
     </form>
-    <a href="{% url 'index' %}">Voltar</a>
+    <a href="{% url 'index' %}">Voltar/home</a>
 </body>
-
-</html>
 {% endblock %}
-
