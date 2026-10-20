@@ -20,11 +20,10 @@ def cadastrar_contas(request):
 def atualizar_contas(request):
     query = request.GET.get('get', '')
     contaspessoais = ContasPessoais.objects.filter(nome_conta__icontains=query)
-    return render(request, 'autalizar_contas.hmtl',
-                  {
-                      'contaspessoais': contaspessoais,
-                      'query': query,
-                      })
+    return render(request, 'atualizar_contas.html', {
+        'contaspessoais': contaspessoais,
+        'query': query,
+        })
     #return render(request, 'atualizar_contas.html')
 
 
