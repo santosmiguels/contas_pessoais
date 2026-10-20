@@ -4,17 +4,10 @@
 <div class="justify-content-center">
     <h2>Controle suas contas pessoais.</h2>
 </div>
+<div>
+    <a href="{% url 'cadastrar_contas' %}">Cadastrar conta </a>
+</div>
 
-            <div class="row">
-                <div>
-                    <button type="submit" class="btn btn-primary">Cadastrar conta</button>
-                </div>
-            </div>
-                        <div class="row">
-                <div>
-                    <button type="submit" class="btn btn-primary">Ler dados</button>
-                </div>
-            </div>
 
 {% endblock %}
 
@@ -35,4 +28,6 @@
     <h3>D - Remover</h3>
 </body>
 </html>
+
+<a href="{% url 'cadastrarContas/' %}">Cadastrar conta </a>
 
