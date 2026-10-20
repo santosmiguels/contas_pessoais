@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     #'localhost:8000',
     #'contas_pessoais.onrender.com',
     'contas-pessoais-j2vo.onrender.com',
-    #'127.0.0.1',
+    '127.0.0.1',
 ]
 
 # Application definition
